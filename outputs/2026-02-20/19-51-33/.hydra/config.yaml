@@ -1,0 +1,18 @@
+paths:
+  raw_data:
+    walmart_original: ${hydra:runtime.cwd}/data/raw/Walmart.csv
+  interim_data:
+    walmart_clean: ${hydra:runtime.cwd}/data/interim/walmart_clean.parquet
+  processed_data:
+    walmart_minimal: ${hydra:runtime.cwd}/data/processed/walmart_minimal.parquet
+    walmart_no_new_flags: ${hydra:runtime.cwd}/data/processed/walmart_no_new_flags.parquet
+    walmart_full: ${hydra:runtime.cwd}/data/processed/walmart_full.parquet
+  models:
+    arima:
+      model: ${hydra:runtime.cwd}/artifacts/models/arima_train_pipeline.pkl
+      cv_predictions: ${hydra:runtime.cwd}/artifacts/cv_predictions/arima_train_pipeline.csv
+      metrics: ${hydra:runtime.cwd}/artifacts/metrics/arima_train_pipeline.csv
+    sarima:
+      model: ${hydra:runtime.cwd}/artifacts/models/sarima_train_pipeline.pkl
+      cv_predictions: ${hydra:runtime.cwd}/artifacts/cv_predictions/sarima_train_pipeline.csv
+      metrics: ${hydra:runtime.cwd}/artifacts/metrics/sarima_train_pipeline.csv

@@ -1,0 +1,32 @@
+[project]
+name = "walmart-ml"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "olverarcedev",email = "olverarcedev@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas (>=2.3.3,<3.0.0)",
+    "numpy (>=1.26,<2.4)",
+    "scikit-learn (>=1.8.0,<2.0.0)",
+    "matplotlib (>=3.10.8,<4.0.0)",
+    "statsmodels (>=0.14.6,<0.15.0)",
+    "hydra-core (>=1.3.2,<2.0.0)",
+    "pytest (>=9.0.2,<10.0.0)",
+    "statsforecast (>=2.0.3,<3.0.0)",
+    "mlflow (>=3.10.0,<4.0.0)",
+]
+
+[tool.poetry]
+packages = [{ include = "ml", from = "src" }]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+data-pipeline = "ml.data_pipeline.main:main"
+train-pipeline = "ml.train_pipeline.main:main"
+full-pipeline = "ml.main:main"

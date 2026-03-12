@@ -1,0 +1,3 @@
+paths:
+  raw_data: ${hydra:runtime.cwd}/data/raw/Walmart.csv
+  interim_data: ${hydra:runtime.cwd}/data/interim/walmart.parquet
